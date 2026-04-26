@@ -10,13 +10,13 @@
   <a href="https://github.com/Cobbleworks/Rail-Boost/releases"><img src="https://img.shields.io/github/v/release/Cobbleworks/Rail-Boost?include_prereleases&style=flat-square&color=4CAF50" alt="Latest Release"></a>&nbsp;&nbsp;<a href="https://github.com/Cobbleworks/Rail-Boost/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="License"></a>&nbsp;&nbsp;<img src="https://img.shields.io/badge/Java-17+-orange?style=flat-square" alt="Java Version">&nbsp;&nbsp;<img src="https://img.shields.io/badge/Minecraft-1.21+-green?style=flat-square" alt="Minecraft Version">&nbsp;&nbsp;<img src="https://img.shields.io/badge/Platform-Spigot%2FPaper-yellow?style=flat-square" alt="Platform">&nbsp;&nbsp;<img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square" alt="Status">
 </p>
 
-Rail Boost is an open-source Minecraft plugin that transforms vanilla minecart transportation into a powerful, fully configurable system. Each minecart can be individually configured with six speed levels, automated item collection, a 27-slot built-in storage inventory, and a preset system that lets players save and share minecart configurations using named sticks. The plugin also adds advanced physics improvements including intelligent curve navigation, uphill momentum preservation, and anti-stuck mechanisms so minecarts travel smoothly and reliably across even complex rail networks.
+Rail Boost is an open-source Minecraft plugin that transforms vanilla minecart transportation into a fully configurable preset-driven system. Each minecart can be configured with six speed levels, automated item collection, optional particle and magnet effects, chunk loading behavior, and shared preset storage managed through named preset sticks. The plugin also adds rail safety checks and speed handling so minecarts travel more reliably across complex track networks.
 
 ### **Core Features**
 
 - **Speed Control:** Six configurable speed levels (0.25× to 4.0×) with intelligent physics handling for curves, uphill sections, and speed transitions
 - **Auto-Pickup System:** Automatic item collection within a configurable radius (1–5 blocks) with per-cart blacklist filtering for precise control
-- **Storage Integration:** Each minecart has its own dedicated 27-slot inventory accessible via a GUI, with automatic item sorting
+- **Preset-Linked Shared Storage:** Minecarts with presets use shared preset storage inventories (54 slots) that can be opened and managed via commands
 - **Preset System:** Create, save, and share named minecart configurations using sticks — apply saved presets to any cart via right-click
 - **Predefined Presets:** Three built-in standard presets for common use cases — Speed, Collector, and Magnet configurations
 - **Advanced Physics:** Enhanced curve navigation, uphill momentum preservation, multi-block position checking, and anti-stuck mechanisms for smooth travel
@@ -30,36 +30,99 @@ Rail Boost is an open-source Minecraft plugin that transforms vanilla minecart t
 ### **Supported Platforms**
 
 - **Server Software:** `Spigot`, `Paper`, `Purpur`, `CraftBukkit`
-- **Minecraft Versions:** `1.21.5`, `1.21.6`, `1.21.7`, `1.21.8`, `1.21.9`, `1.21.10` and higher
+- **Minecraft Versions:** `1.16` and higher
 - **Java Requirements:** `Java 17+`
 
 ### **Installation**
 
 1. Download the latest `.jar` from the [Releases](https://github.com/Cobbleworks/Rail-Boost/releases) page
 2. Stop your Minecraft server
-3. Copy the `.jar` into your server's `plugins` folder
-4. Start your server — a default configuration folder is generated at `plugins/RailBoost/`
+3. Copy the `.jar` into your server's `plugins/` folder
+4. Start your server
+5. Use commands to create/edit presets; data is persisted in `plugins/RailBoost/presets.yml`
 
-### **Player Commands**
+### **Commands**
 
 | Command | Description |
 |---------|-------------|
-| `/railboost speed <1-6>` | Set the current minecart's speed level (0.25× to 4.0× multiplier) |
-| `/railboost autopickup <true/false>` | Toggle automatic item collection for the current minecart |
-| `/railboost autopickup radius <1-5>` | Set the item pickup radius in blocks |
-| `/railboost storage` | Open the current minecart's dedicated 27-slot inventory |
-| `/railboost speedometer <true/false>` | Show or hide the real-time BossBar speed display |
-| `/railboost chunkload <true/false>` | Enable or disable automatic chunk loading while traveling |
-| `/railboost magnet <true/false>` | Toggle minecart-to-minecart magnetism for train formation |
-| `/railboost effect <true/false>` | Enable or disable particle trail effects |
-| `/railboost effect type <particle>` | Set the particle type (e.g., `FLAME`, `HEART`, `CLOUD`) |
-| `/railboost blacklist add/remove <item>` | Add or remove an item from the auto-pickup filter |
-| `/railboost blacklist list` | Display all currently blacklisted items |
-| `/railboost info` | Display all current settings for the active minecart |
+| `/railboost help` | Show command help |
+| `/railboost preset <name>` | Give yourself a preset stick for an existing preset |
+| `/railboost give <player> <preset>` | Give another player a preset stick |
+| `/railboost create <name>` | Create a new preset with default settings |
+| `/railboost edit <preset> <setting> <value>` | Edit one setting on a preset |
+| `/railboost edit <preset> storage` | Open shared storage inventory for a preset |
+| `/railboost list` | List all available presets with summary settings |
+| `/railboost delete <preset>` | Delete a preset |
 
-**Aliases:** `/rb`
+**Aliases:** `/rb`, `/boost`
 
-**Note:** Most commands require the player to be seated in an active (configured) minecart. Use `/railboost info` to verify activation status.
+### **Preset Edit Settings**
+
+Use `/railboost edit <preset> <setting> <value>` with these options:
+
+| Setting | Value | Description |
+|---------|-------|-------------|
+| `speed` | `1..6` | Speed level (`1=Slow`, `6=Ultra Fast`) |
+| `autopickup` | `true/false` | Toggle item auto-pickup |
+| `radius` | `1..5` | Auto-pickup radius |
+| `speedometer` | `true/false` | Toggle BossBar speedometer |
+| `chunkload` | `true/false` | Toggle temporary force-loading of traversed chunks |
+| `magnet` | `true/false` | Toggle minecart magnetism behavior |
+| `effects` | `true/false` | Toggle particle trail effects |
+| `effecttype` | Bukkit particle name | Set particle type (for example `FLAME`, `END_ROD`) |
+| `blacklist` | `add/remove <material>` | Add/remove material from auto-pickup blacklist |
+| `storage` | none | Open shared storage GUI for this preset |
+
+### **How It Works**
+
+- Create or edit a preset
+- Get a preset stick with `/railboost preset <name>`
+- Right-click a minecart while holding the stick to apply settings
+- Settings are written to minecart persistent data and used by movement/pickup/effects systems
+- Minecarts with the same preset name share the same preset storage inventory
+
+### **Data Storage**
+
+Rail-Boost stores preset definitions in `plugins/RailBoost/presets.yml`.
+
+Each preset entry contains:
+
+| Key | Type | Description |
+|-----|------|-------------|
+| `name` | string | Display name of preset |
+| `speed` | int | Speed level `1..6` |
+| `autopickup` | boolean | Auto-pickup enabled flag |
+| `pickupRadius` | int | Pickup radius `1..5` |
+| `speedometer` | boolean | BossBar speed display flag |
+| `chunkload` | boolean | Chunk loading flag |
+| `magnet` | boolean | Magnet mode flag |
+| `effects` | boolean | Particle effects flag |
+| `effectType` | string | Bukkit particle type |
+| `blacklist` | list | Material names blocked from auto-pickup |
+
+Default presets created by the plugin:
+
+| Preset | Defaults |
+|--------|----------|
+| `speed` | `speed=4`, `speedometer=true` |
+| `collector` | `autopickup=true`, `pickupRadius=4`, `speed=2` |
+| `magnet` | `magnet=true`, `speed=3`, `effects=true` |
+
+### **Permissions**
+
+| Permission | Description | Default |
+|------------|-------------|---------|
+| `railboost.use` | Allows use of RailBoost features | `true` |
+| `railboost.admin` | Administrative access to RailBoost | `op` |
+
+### **Behavior Notes**
+
+- `VehicleMoveEvent` applies auto-pickup, chunk-loading, effects, and speed logic continuously
+- Speed levels map to velocity factors: `0.4`, `0.8`, `1.2`, `2.0`, `3.0`, `4.0`
+- Speed boosting is applied only when the track ahead is considered straight/safe
+- Storage and hopper minecarts can be opened while riding via the F key (swap-hand event)
+- Minecart settings are stored in entity persistent data under plugin key `settings`
+- Permissions are declared in `plugin.yml`; command handlers currently do not enforce explicit permission checks in code
 
 ### **License**
 

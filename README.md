@@ -131,15 +131,15 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 ## **Screenshots**
 
-The screenshots below demonstrate the core features of the Rail Boost plugin, including speed control, cart storage inventory, auto-pickup system, and advanced rail physics.
+The screenshots below demonstrate the core features of the Rail Boost plugin, including the magnetic feature connecting multiple minecarts and the speedometer enabled in a forest.
 
 <table>
   <tr>
-    <th>Rail Boost - Speedometer</th>
-    <th>Rail Boost - Rail Physics</th>
+    <th>Rail Boost - Magnetic Minecart Feature</th>
+    <th>Rail Boost - Speedometer in Forest</th>
   </tr>
   <tr>
-    <td><a href="https://github.com/Cobbleworks/Rail-Boost/raw/main/images/screenshot-speedometer.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Rail-Boost/raw/main/images/screenshot-speedometer.png" alt="Speedometer" width="450"></a></td>
-    <td><a href="https://github.com/Cobbleworks/Rail-Boost/raw/main/images/screenshot-physics.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Rail-Boost/raw/main/images/screenshot-physics.png" alt="Rail Physics" width="450"></a></td>
+    <td><a href="https://github.com/Cobbleworks/Rail-Boost/raw/main/images/screenshot-magnetic-carts.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Rail-Boost/raw/main/images/screenshot-magnetic-carts.png" alt="Magnetic Minecart Feature" width="450"></a></td>
+    <td><a href="https://github.com/Cobbleworks/Rail-Boost/raw/main/images/screenshot-speedometer-forest.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Rail-Boost/raw/main/images/screenshot-speedometer-forest.png" alt="Speedometer in Forest" width="450"></a></td>
   </tr>
 </table>

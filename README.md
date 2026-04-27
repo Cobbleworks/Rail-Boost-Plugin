@@ -135,19 +135,11 @@ The screenshots below demonstrate the core features of the Rail Boost plugin, in
 
 <table>
   <tr>
-    <th>Rail Boost - Speed Control</th>
     <th>Rail Boost - Speedometer</th>
-  </tr>
-  <tr>
-    <td><a href="https://github.com/Cobbleworks/Rail-Boost/raw/main/images/screenshot-speed.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Rail-Boost/raw/main/images/screenshot-speed.png" alt="Speed Control" width="450"></a></td>
-    <td><a href="https://github.com/Cobbleworks/Rail-Boost/raw/main/images/screenshot-speedometer.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Rail-Boost/raw/main/images/screenshot-speedometer.png" alt="Speedometer" width="450"></a></td>
-  </tr>
-  <tr>
-    <th>Rail Boost - Auto-Pickup</th>
     <th>Rail Boost - Rail Physics</th>
   </tr>
   <tr>
-    <td><a href="https://github.com/Cobbleworks/Rail-Boost/raw/main/images/screenshot-pickup.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Rail-Boost/raw/main/images/screenshot-pickup.png" alt="Auto-Pickup" width="450"></a></td>
+    <td><a href="https://github.com/Cobbleworks/Rail-Boost/raw/main/images/screenshot-speedometer.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Rail-Boost/raw/main/images/screenshot-speedometer.png" alt="Speedometer" width="450"></a></td>
     <td><a href="https://github.com/Cobbleworks/Rail-Boost/raw/main/images/screenshot-physics.png" target="_blank" rel="noopener noreferrer"><img src="https://github.com/Cobbleworks/Rail-Boost/raw/main/images/screenshot-physics.png" alt="Rail Physics" width="450"></a></td>
   </tr>
 </table>

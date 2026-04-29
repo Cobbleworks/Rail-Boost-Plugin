@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [1.0.4] - 2026-04-29
+
+Rail Boost v1.0.4 introduces a hard-coupling magnet mode so linked minecarts behave as one train unit, plus a default speed adjustment for the Magnet preset.
+
+### Magnetic Coupling Update
+
+- **Rigid Coupling Behavior**: Replaced spring-like pull behavior with strict leader-follower coupling to prevent reconnect/disconnect oscillation
+- **Tick-Level Coupling**: Magnet alignment now runs every tick so spacing remains stable even through speed changes and rail transitions
+- **Rail-Aligned Constraint**: Coupling logic keeps carts aligned to rail direction and avoids side-force drift
+
+### Preset Defaults
+
+- **Magnet Preset Speed**: Set default Magnet preset speed to level 2 for safer and more controlled convoy movement
+
+**Note:** If you encounter any bugs or issues, please don't hesitate to open an [issue](https://github.com/Cobbleworks/Rail-Boost-Plugin/issues). For any questions or to start a discussion, feel free to initiate a [discussion](https://github.com/Cobbleworks/Rail-Boost-Plugin/discussions) on the GitHub repository.
+
 ## [1.0.3] - 2026-04-28
 
 Rail Boost v1.0.3 fixes the magnetic preset physics, replacing the old unbounded accumulation model with a proper spring-damper system that keeps carts stably anchored regardless of which cart the preset is applied to.

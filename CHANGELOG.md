@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [1.0.4] - 2026-04-29
 
-Rail Boost v1.0.4 introduces a hard-coupling magnet mode so linked minecarts behave as one train unit, plus a default speed adjustment for the Magnet preset.
+This update introduces hard-coupling magnet behavior so linked minecarts operate as one train unit, together with a safer default speed for the Magnet preset.
 
 ### Magnetic Coupling Update
 

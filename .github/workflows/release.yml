@@ -22,12 +22,15 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Build with Maven
-        run: mvn package -B --no-transfer-progress
-
       - name: Extract version from tag
         id: version
         run: echo "VERSION=${GITHUB_REF_NAME#v}" >> $GITHUB_OUTPUT
+
+      - name: Set project version from tag
+        run: mvn -B versions:set -DnewVersion=${{ steps.version.outputs.VERSION }} -DgenerateBackupPoms=false --no-transfer-progress
+
+      - name: Build with Maven
+        run: mvn package -B --no-transfer-progress
 
       - name: Compute release display name
         id: meta

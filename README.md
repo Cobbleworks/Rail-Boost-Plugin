@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/plugin-logo.png" alt="Rail Boost Plugin" width="180" />
+  <img src="images/plugin-logo.png" alt="Rail Boost Plugin" width="200" height="200" />
 </p>
 <h1 align="center">Rail Boost Plugin</h1>
 <p align="center">
@@ -41,16 +41,17 @@ Rail Boost is an open-source Minecraft plugin that transforms vanilla minecart t
     - [Installation Steps](#installation-steps)
     - [First Launch & Configuration](#first-launch--configuration)
     - [Verifying Installation](#verifying-installation)
-2. [Configuration](#configuration)
+2. [Third-Party Plugins](#third-party-plugins)
+3. [Configuration](#configuration)
     - [Preset Edit Settings](#preset-edit-settings)
     - [Data Storage](#data-storage)
-3. [How It Works](#how-it-works)
-4. [Commands](#commands)
+4. [How It Works](#how-it-works)
+5. [Commands](#commands)
     - [Command Reference](#command-reference)
-5. [Permissions](#permissions)
-6. [Building from Source](#building-from-source)
-7. [License](#license)
-8. [Screenshots](#screenshots)
+6. [Permissions](#permissions)
+7. [Building from Source](#building-from-source)
+8. [License](#license)
+9. [Screenshots](#screenshots)
 
 ## **Getting Started**
 
@@ -90,6 +91,10 @@ Three default presets are created automatically: `speed`, `collector`, and `magn
 - Run `/railboost list` to confirm the three default presets are loaded
 - Run `/railboost preset speed` to get a Speed preset stick, then right-click a minecart - ride it and the BossBar speedometer should appear
 - If the plugin fails to load, check the server console for `RailBoost` error messages (common causes: wrong Java version, corrupt JAR, or unsupported API version)
+
+## **Third-Party Plugins**
+
+None. Rail Boost is self-contained and uses only the server API.
 
 ## **Configuration**
 

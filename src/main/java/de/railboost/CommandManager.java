@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Set;
 
+/**
+ * Parses rail-boost subcommands and updates player or minecart settings.
+ */
 public class CommandManager {
 
     private final RailBoostPlugin plugin;
@@ -335,7 +338,8 @@ public class CommandManager {
                         break;
                     case "effecttype":
                         suggestions.addAll(Arrays.asList("FLAME", "END_ROD", "PORTAL", "CLOUD",
-                                "VILLAGER_HAPPY", "CRIT", "SPELL_WITCH", "DRAGON_BREATH"));
+                                supportedParticleName("HAPPY_VILLAGER", "VILLAGER_HAPPY"),
+                                "CRIT", "SPELL_WITCH", "DRAGON_BREATH"));
                         break;
                     case "blacklist":
                         suggestions.addAll(Arrays.asList("add", "remove"));
@@ -362,5 +366,14 @@ public class CommandManager {
         }
 
         return suggestions;
+    }
+
+    private static String supportedParticleName(String currentName, String legacyName) {
+        try {
+            org.bukkit.Particle.valueOf(currentName);
+            return currentName;
+        } catch (IllegalArgumentException ignored) {
+            return legacyName;
+        }
     }
 }

@@ -16,6 +16,9 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
 
+/**
+ * Persists named minecart presets and resolves them for players and controllers.
+ */
 public class PresetManager {
 
     private final RailBoostPlugin plugin;

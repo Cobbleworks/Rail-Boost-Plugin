@@ -6,6 +6,9 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 
+/**
+ * Bootstraps minecart controls and routes the legacy command entry point.
+ */
 public class RailBoostPlugin extends JavaPlugin implements Listener, TabExecutor {
 
     private MinecartController minecartController;

@@ -1,8 +1,9 @@
 name: RailBoost
-version: 2.0.0
+version: ${project.version}
 main: de.railboost.RailBoostPlugin
 api-version: 1.16
-author: YourName
+author: Cobbleworks
+website: https://github.com/Cobbleworks/Rail-Boost-Plugin
 description: Enhanced minecart system with presets and all minecart types
 
 commands:

@@ -34,7 +34,12 @@ import java.util.HashSet;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.UUID;
 
+/**
+ * Enforces speed, storage, pickup, and visual settings for active minecarts.
+ */
 public class MinecartController implements Listener {
+    private static final Particle HAPPY_VILLAGER_PARTICLE = resolveParticle(
+            "HAPPY_VILLAGER", "VILLAGER_HAPPY");
 
     private final RailBoostPlugin plugin;
     private final Map<UUID, BossBar> speedometers = new ConcurrentHashMap<>();
@@ -392,7 +397,7 @@ public class MinecartController implements Listener {
             }
 
             if (pickedUp) {
-                minecart.getWorld().spawnParticle(Particle.VILLAGER_HAPPY,
+                minecart.getWorld().spawnParticle(HAPPY_VILLAGER_PARTICLE,
                         item.getLocation(), 3, 0.2, 0.2, 0.2, 0.1);
             }
         }
@@ -624,5 +629,13 @@ public class MinecartController implements Listener {
 
     public static String[] getSpeedNames() {
         return new String[]{"Slow", "Normal", "Fast", "Very Fast", "Super Fast", "Ultra Fast"};
+    }
+
+    private static Particle resolveParticle(String currentName, String legacyName) {
+        try {
+            return Particle.valueOf(currentName);
+        } catch (IllegalArgumentException ignored) {
+            return Particle.valueOf(legacyName);
+        }
     }
 }

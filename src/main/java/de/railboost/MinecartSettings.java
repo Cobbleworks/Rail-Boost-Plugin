@@ -4,6 +4,9 @@ import org.bukkit.Material;
 import java.util.Set;
 import java.util.HashSet;
 
+/**
+ * Mutable settings applied to one managed minecart or saved preset.
+ */
 public class MinecartSettings {
 
     private String name;

@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="images/plugin-logo.png" alt="Rail Boost Plugin" width="200" height="200" />
+  <img src="images/plugin-banner.png" alt="Cobbleworks - Rail Boost Plugin banner" width="818" />
 </p>
-<h1 align="center">Rail Boost Plugin</h1>
+<h1 align="center">Cobbleworks - Rail Boost Plugin</h1>
 <p align="center">
-  <b>A comprehensive minecart enhancement system for Minecraft servers.</b><br>
-  <b>Speed control, auto-pickup, built-in storage, preset system, and advanced physics.</b>
+  <b>Make minecart travel faster, steadier, and more useful for passengers and item transport.</b><br>
+  <b>Configure speed, collection, storage, presets, chunk loading, effects, and convoy behavior per cart.</b>
 </p>
 <p align="center">
   <a href="https://github.com/Cobbleworks/Rail-Boost-Plugin/releases"><img src="https://img.shields.io/github/v/release/Cobbleworks/Rail-Boost-Plugin?include_prereleases&style=flat-square&color=4CAF50" alt="Latest Release"></a>&nbsp;&nbsp;<a href="https://github.com/Cobbleworks/Rail-Boost-Plugin/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="License"></a>&nbsp;&nbsp;<img src="https://img.shields.io/badge/Java-17+-orange?style=flat-square" alt="Java Version">&nbsp;&nbsp;<img src="https://img.shields.io/badge/Minecraft-1.16+-green?style=flat-square" alt="Minecraft Version">&nbsp;&nbsp;<img src="https://img.shields.io/badge/Platform-Spigot%2FPaper-yellow?style=flat-square" alt="Platform">&nbsp;&nbsp;<img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square" alt="Status">&nbsp;&nbsp;<a href="https://github.com/Cobbleworks/Rail-Boost-Plugin/issues"><img src="https://img.shields.io/github/issues/Cobbleworks/Rail-Boost-Plugin?style=flat-square&color=orange" alt="Open Issues"></a>
@@ -12,7 +12,7 @@
 
 Rail Boost is an open-source Minecraft plugin that transforms vanilla minecart transportation into a fully configurable, preset-driven system. Each minecart can be configured with six speed levels, automated item collection, optional particle and magnet effects, chunk loading behavior, and shared preset storage managed through named preset sticks. The plugin also adds rail safety checks and speed handling so minecarts travel more reliably across complex track networks.
 
-### **Core Features**
+## **Core Features**
 
 - **Speed Control:** Six configurable speed levels (0.25x to 4.0x) with intelligent physics handling for curves, uphill sections, and speed transitions
 - **Auto-Pickup System:** Automatic item collection within a configurable radius (1-5 blocks) with per-cart blacklist filtering for precise control
@@ -27,7 +27,7 @@ Rail Boost is an open-source Minecraft plugin that transforms vanilla minecart t
 - **F-Key Access:** Open storage and hopper inventories while seated in a minecart using the F key
 - **Persistent Configuration:** All per-cart settings and preset data are saved to YAML and persist across server restarts
 
-### **Supported Platforms**
+## **Supported Platforms**
 
 - **Server Software:** `Spigot`, `Paper`, `Purpur`, `CraftBukkit`
 - **Minecraft Versions:** `1.16` and higher
@@ -36,22 +36,24 @@ Rail Boost is an open-source Minecraft plugin that transforms vanilla minecart t
 
 ## **Table of Contents**
 
-1. [Getting Started](#getting-started)
+1. [Core Features](#core-features)
+2. [Supported Platforms](#supported-platforms)
+3. [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Installation Steps](#installation-steps)
     - [First Launch & Configuration](#first-launch--configuration)
     - [Verifying Installation](#verifying-installation)
-2. [Third-Party Plugins](#third-party-plugins)
-3. [Configuration](#configuration)
+4. [Third-Party Plugins](#third-party-plugins)
+5. [Configuration](#configuration)
     - [Preset Edit Settings](#preset-edit-settings)
     - [Data Storage](#data-storage)
-4. [How It Works](#how-it-works)
-5. [Commands](#commands)
+6. [How It Works](#how-it-works)
+7. [Commands](#commands)
     - [Command Reference](#command-reference)
-6. [Permissions](#permissions)
-7. [Building from Source](#building-from-source)
-8. [License](#license)
-9. [Screenshots](#screenshots)
+8. [Permissions](#permissions)
+9. [Building from Source](#building-from-source)
+10. [License](#license)
+11. [Screenshots](#screenshots)
 
 ## **Getting Started**
 
